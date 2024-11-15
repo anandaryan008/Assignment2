@@ -1,0 +1,71 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Quality Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Water Quality Prediction</h1>
+    
+    <form method="POST" action="/">
+        <label for="temperature_min">Temperature (Min):</label>
+        <input type="text" id="temperature_min" name="temperature_min" required><br>
+
+        <label for="temperature_max">Temperature (Max):</label>
+        <input type="text" id="temperature_max" name="temperature_max" required><br>
+
+        <label for="dissolved_oxygen_min">Dissolved Oxygen (Min):</label>
+        <input type="text" id="dissolved_oxygen_min" name="dissolved_oxygen_min" required><br>
+
+        <label for="dissolved_oxygen_max">Dissolved Oxygen (Max):</label>
+        <input type="text" id="dissolved_oxygen_max" name="dissolved_oxygen_max" required><br>
+
+        <label for="ph_min">pH (Min):</label>
+        <input type="text" id="ph_min" name="ph_min" required><br>
+
+        <label for="ph_max">pH (Max):</label>
+        <input type="text" id="ph_max" name="ph_max" required><br>
+
+        <label for="conductivity_min">Conductivity (Min):</label>
+        <input type="text" id="conductivity_min" name="conductivity_min" required><br>
+
+        <label for="conductivity_max">Conductivity (Max):</label>
+        <input type="text" id="conductivity_max" name="conductivity_max" required><br>
+
+        <label for="bod_min">BOD (Min):</label>
+        <input type="text" id="bod_min" name="bod_min" required><br>
+
+        <label for="bod_max">BOD (Max):</label>
+        <input type="text" id="bod_max" name="bod_max" required><br>
+
+        <label for="nitrate_min">Nitrate + Nitrite (Min):</label>
+        <input type="text" id="nitrate_min" name="nitrate_min" required><br>
+
+        <label for="nitrate_max">Nitrate + Nitrite (Max):</label>
+        <input type="text" id="nitrate_max" name="nitrate_max" required><br>
+
+        <label for="fecal_coliform_min">Fecal Coliform (Min):</label>
+        <input type="text" id="fecal_coliform_min" name="fecal_coliform_min" required><br>
+
+        <label for="fecal_coliform_max">Fecal Coliform (Max):</label>
+        <input type="text" id="fecal_coliform_max" name="fecal_coliform_max" required><br>
+
+        <label for="total_coliform_min">Total Coliform (Min):</label>
+        <input type="text" id="total_coliform_min" name="total_coliform_min" required><br>
+
+        <label for="total_coliform_max">Total Coliform (Max):</label>
+        <input type="text" id="total_coliform_max" name="total_coliform_max" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+        <h2>Prediction Result: {{ result }}</h2>
+    {% elif error %}
+        <h2 style="color: red;">{{ error }}</h2>
+    {% endif %}
+</body>
+</html>
+
